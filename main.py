@@ -1,4 +1,6 @@
-def hello():
-    print('hello')
+from services.csv_loader import CSVLoaderService
 
-hello()
+loader = CSVLoaderService('fake_contacts_regenerated.csv')
+persons = loader.load_persons()
+
+print(persons)
