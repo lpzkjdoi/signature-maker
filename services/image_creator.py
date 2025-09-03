@@ -1,5 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw
 
+from services.file_manager import FileManagerService
+
 
 class ImageCreatorService:
     def __init__(self, base_image_path: str):
@@ -29,4 +31,4 @@ class ImageCreatorService:
         # Display edited image
         img.show()
 
-        img.save(person.get_full_name() + ".png")
+        img.save(FileManagerService.generate_path(person))
